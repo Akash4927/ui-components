@@ -18,7 +18,12 @@ import ShapeSheet from './shapes/_ShapeSheet';
 import ShapeCylinder from './shapes/_ShapeCylinder';
 import ShapeDottedCylinder from './shapes/_ShapeDottedCylinder';
 import TagCamera from './tags/_TagCamera';
+import TagExclamation from './tags/_TagExclamation';
+import TagFailed from './tags/_TagFailed';
+import TagNotPermitted from './tags/_TagNotPermitted';
+import TagOffline from './tags/_TagOffline';
 import TagReload from './tags/_TagReload';
+import TagUnknown from './tags/_TagUnknown';
 
 export const nodeBaseSize = 55;
 export const shapes = {
@@ -37,7 +42,12 @@ export const shapes = {
 export const tags = {
   none: () => null,
   camera: TagCamera,
+  degraded: TagExclamation,
+  failed: TagFailed,
+  notpermitted: TagNotPermitted,
+  offline: TagOffline,
   reload: TagReload,
+  unknown: TagUnknown,
 };
 
 const labelWidth = nodeBaseSize * 2.5;
