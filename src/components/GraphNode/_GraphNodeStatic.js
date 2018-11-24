@@ -17,6 +17,10 @@ import ShapeCloud from './shapes/_ShapeCloud';
 import ShapeSheet from './shapes/_ShapeSheet';
 import ShapeCylinder from './shapes/_ShapeCylinder';
 import ShapeDottedCylinder from './shapes/_ShapeDottedCylinder';
+import ShapeController from './shapes/_ShapeController';
+import ShapeReplica from './shapes/_ShapeReplica';
+import ShapeDottedSquare from './shapes/_ShapeDottedSquare';
+import ShapeRectangle from './shapes/_ShapeRectangle';
 import TagCamera from './tags/_TagCamera';
 import TagExclamation from './tags/_TagExclamation';
 import TagFailed from './tags/_TagFailed';
@@ -38,6 +42,10 @@ export const shapes = {
   sheet: ShapeSheet,
   cylinder: ShapeCylinder,
   dottedcylinder: ShapeDottedCylinder,
+  controller: ShapeController,
+  replica: ShapeReplica,
+  dottedsquare: ShapeDottedSquare,
+  rectangle: ShapeRectangle,
 };
 export const tags = {
   none: () => null,
