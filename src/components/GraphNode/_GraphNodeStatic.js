@@ -26,6 +26,7 @@ import TagExclamation from './tags/_TagExclamation';
 import TagFailed from './tags/_TagFailed';
 import TagNotPermitted from './tags/_TagNotPermitted';
 import TagOffline from './tags/_TagOffline';
+import TagPending from './tags/_TagPending';
 import TagReload from './tags/_TagReload';
 import TagUnknown from './tags/_TagUnknown';
 
@@ -54,6 +55,7 @@ export const tags = {
   failed: TagFailed,
   notpermitted: TagNotPermitted,
   offline: TagOffline,
+  pending: TagPending,
   reload: TagReload,
   unknown: TagUnknown,
 };
