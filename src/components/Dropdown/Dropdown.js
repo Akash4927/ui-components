@@ -31,8 +31,10 @@ const Popover = styled.div`
   box-shadow: ${props => props.theme.boxShadow.light};
   margin-top: 4px;
   width: ${props => props.width}px;
-  /* +10 to account for list top padding */
-  max-height: ${HEIGHT_NUMBER * 10 + 10}px;
+  /* +10 to account for list top padding.
+   * Multiply by an 0.5 to visually slice the last item in half to more clearly show that the
+   * dropdown can be scrolled. */
+  max-height: ${HEIGHT_NUMBER * 10.5 + 10}px;
   overflow: auto;
   box-sizing: border-box;
   padding: 6px 0;
@@ -47,7 +49,7 @@ const Overlay = styled.div`
   left: 0;
 `;
 
-const ItemWrapper = Item.extend`
+const ItemWrapper = styled(Item)`
   line-height: ${HEIGHT};
   color: ${props =>
     props.selected ? props.theme.colors.blue400 : props.theme.textColor};
@@ -63,7 +65,7 @@ const Divider = styled.div`
   border-bottom: 1px solid ${props => props.theme.colors.gray200};
 `;
 
-const SelectedItem = Item.extend`
+const SelectedItem = styled(Item)`
   height: ${HEIGHT};
   box-sizing: border-box;
   border-radius: ${props => props.theme.borderRadius.soft};
@@ -219,24 +221,22 @@ class Dropdown extends React.Component {
               className="dropdown-popover"
               width={this.element.current.offsetWidth}
             >
-              {map(
-                divided,
-                (item, index) =>
-                  item ? (
-                    <ItemWrapper
-                      className="dropdown-item"
-                      key={item.value}
-                      onClick={ev =>
-                        this.handleChange(ev, item.value, item.label)
-                      }
-                      selected={item.value === value}
-                      title={item && item.label}
-                    >
-                      {item.label}
-                    </ItemWrapper>
-                  ) : (
-                    <Divider key={index} />
-                  )
+              {map(divided, (item, index) =>
+                item ? (
+                  <ItemWrapper
+                    className="dropdown-item"
+                    key={item.value}
+                    onClick={ev =>
+                      this.handleChange(ev, item.value, item.label)
+                    }
+                    selected={item.value === value}
+                    title={item && item.label}
+                  >
+                    {item.label}
+                  </ItemWrapper>
+                ) : (
+                  <Divider key={index} />
+                )
               )}
             </Popover>
           </div>

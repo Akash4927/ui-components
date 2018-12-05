@@ -120,7 +120,7 @@ const LabelTemplate = styled.div`
     `};
 `;
 
-const LabelStandard = LabelTemplate.extend`
+const LabelStandard = styled(LabelTemplate)`
   color: ${props =>
     props.contrastMode
       ? props.theme.colors.black
@@ -129,7 +129,7 @@ const LabelStandard = LabelTemplate.extend`
   margin-top: 4px;
 `;
 
-const LabelMinorStandard = LabelTemplate.extend`
+const LabelMinorStandard = styled(LabelTemplate)`
   color: ${props =>
     props.contrastMode
       ? props.theme.colors.black
