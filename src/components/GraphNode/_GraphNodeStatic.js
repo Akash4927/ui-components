@@ -30,6 +30,7 @@ import TagOffline from './tags/_TagOffline';
 import TagPending from './tags/_TagPending';
 import TagReload from './tags/_TagReload';
 import TagUnknown from './tags/_TagUnknown';
+import ShapeDottedRectangle from './shapes/_ShapeDottedRectangle';
 
 export const nodeBaseSize = 55;
 export const shapes = {
@@ -49,6 +50,7 @@ export const shapes = {
   replica: ShapeReplica,
   dottedsquare: ShapeDottedSquare,
   rectangle: ShapeRectangle,
+  dottedrectangle: ShapeDottedRectangle,
 };
 export const tags = {
   camera: TagCamera,
